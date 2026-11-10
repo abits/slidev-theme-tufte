@@ -10,7 +10,12 @@
   },
   "keywords": [
     "slidev-theme",
-    "slidev"
+    "slidev",
+    "tufte",
+    "presentation",
+    "slides",
+    "data-visualization",
+    "sparkline"
   ],
   "engines": {
     "slidev": ">=52.0.0"
@@ -24,7 +29,8 @@
   "scripts": {
     "dev": "slidev example.md",
     "build": "slidev build example.md",
-    "export": "slidev export example.md --per-slide"
+    "export": "slidev export example.md --per-slide",
+    "screenshot": "slidev export example.md --format png --output screenshots"
   },
   "devDependencies": {
     "@slidev/cli": "53.1.0",
@@ -43,5 +49,9 @@
       "aspectRatio": "16/9",
       "canvasWidth": 980
     }
+  },
+  "homepage": "https://github.com/abits/slidev-theme-tufte#readme",
+  "bugs": {
+    "url": "https://github.com/abits/slidev-theme-tufte/issues"
   }
 }

@@ -74,3 +74,36 @@ layout: section
 ---
 
 # A section divider
+
+---
+
+## Code, quietly
+
+```ts
+// a near-monochrome highlighter: code is read, not decorated
+export function median(xs: number[]): number {
+  const s = [...xs].sort((a, b) => a - b)
+  const m = s.length >> 1
+  return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2
+}
+```
+
+::margin::
+
+Shiki's `min-light`: no background, few colours, comments in grey.
+
+---
+layout: fullwidth
+---
+
+## Diagrams carry structure, not colour
+
+```mermaid
+flowchart LR
+  A[Markdown] --> B[Slidev] --> C[Slides]
+  B --> D[PDF]
+```
+
+::margin::
+
+Mermaid's `neutral` theme in the slide's serif.
