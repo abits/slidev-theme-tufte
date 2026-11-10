@@ -1,0 +1,41 @@
+{
+  "name": "slidev-theme-tufte",
+  "version": "0.1.0",
+  "description": "Slidev theme after Edward Tufte: show the data, maximise data-ink, no chartjunk",
+  "author": "Christoph Martel",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abits/slidev-theme-tufte.git"
+  },
+  "keywords": [
+    "slidev-theme",
+    "slidev"
+  ],
+  "engines": {
+    "slidev": ">=52.0.0"
+  },
+  "scripts": {
+    "dev": "slidev example.md",
+    "build": "slidev build example.md",
+    "export": "slidev export example.md --per-slide"
+  },
+  "devDependencies": {
+    "@slidev/cli": "53.1.0",
+    "playwright-chromium": "1.65.0"
+  },
+  "slidev": {
+    "colorSchema": "light",
+    "defaults": {
+      "fonts": {
+        "sans": "TeX Gyre Pagella",
+        "serif": "TeX Gyre Pagella",
+        "mono": "DejaVu Sans Mono",
+        "provider": "none"
+      },
+      "transition": "none",
+      "aspectRatio": "16/9",
+      "canvasWidth": 980
+    }
+  }
+}
