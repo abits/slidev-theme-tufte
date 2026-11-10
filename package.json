@@ -24,7 +24,8 @@
     "components",
     "layouts",
     "setup",
-    "styles"
+    "styles",
+    "slide-bottom.vue"
   ],
   "scripts": {
     "dev": "slidev example.md",

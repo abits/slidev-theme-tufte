@@ -2,6 +2,13 @@
 theme: ./
 title: slidev-theme-tufte
 layout: cover
+themeConfig:
+  header:
+    left: '{title}'
+    right: Christoph Martel
+  footer:
+    left: Running heads, like a book’s
+    right: '{page} / {total}'
 ---
 
 # slidev-theme-tufte
@@ -71,9 +78,12 @@ layout: fullwidth
 
 ---
 layout: section
+footer: true
 ---
 
 # A section divider
+
+Section slides skip the running heads unless they ask for them, as this one does for its footer.
 
 ---
 
@@ -107,3 +117,23 @@ flowchart LR
 ::margin::
 
 Mermaid's `neutral` theme in the slide's serif.
+
+---
+
+## Running heads
+
+A line above and below each slide, set once in the headmatter:
+
+```yaml
+themeConfig:
+  header:
+    left: '{title}'
+    right: Christoph Martel
+  footer:
+    left: Running heads, like a book’s
+    right: '{page} / {total}'
+```
+
+::margin::
+
+Each part is optional. Small caps in grey, no rules. Never on the first slide or a cover, like a book's title page; `header: false` or `footer: false` hides them on any other slide.

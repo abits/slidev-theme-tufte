@@ -37,6 +37,7 @@ These are the slides of [`example.md`](example.md), which also serves as a quick
 ![Section](screenshots/7.png)
 ![Code](screenshots/8.png)
 ![Mermaid diagram](screenshots/9.png)
+![Header and footer](screenshots/10.png)
 
 ## The ideas behind it
 
@@ -181,6 +182,56 @@ layout: section
 You can add an optional line underneath, which is set in grey.
 ```
 
+### Header and footer
+
+Like the running heads in a book, the theme can show a small line of text at the top and at the bottom of each slide, for example the title of the talk, your name or the page number. Both lines are optional, and each has a left and a right part, both of which are optional too. You set them up once in the headmatter:
+
+```yaml
+---
+theme: tufte
+title: Response times in 2026
+themeConfig:
+  header:
+    left: '{title}'
+    right: Christoph Martel
+  footer:
+    right: '{page}'
+---
+```
+
+`{title}` is replaced by the title of the deck, `{page}` by the current slide number and `{total}` by the number of slides, so `'{page} / {total}'` also works.
+
+The lines are set in small caps in grey, with no rules or boxes around them, so they help with orientation without drawing attention away from the content. The first slide and slides with the `cover` layout never show them, just as a book's title page has no running head. `section` slides leave them out as well, the way chapter openings do in a book, but you can turn them back on with `header: true` or `footer: true` in the slide's frontmatter. On any other slide, `header: false` or `footer: false` hides them.
+
+![A slide with header and footer](screenshots/10.png)
+
+Here is the configuration used in the example deck. The text in each part is plain text, so you can write anything there, for example the name of a conference or a date. If a value contains a colon or starts with `{`, put it in quotes, as YAML requires:
+
+```yaml
+themeConfig:
+  header:
+    left: '{title}'
+    right: Christoph Martel
+  footer:
+    left: Running heads, like a book’s
+    right: '{page} / {total}'
+```
+
+To show the footer on a section slide, add `footer: true` to its frontmatter:
+
+```markdown
+---
+layout: section
+footer: true
+---
+
+# Results
+```
+
+![A section slide that shows its footer](screenshots/7.png)
+
+Tufte himself would probably ask whether your audience needs them at all. A page number helps when people want to refer back to a slide in questions, and an author line helps when slides get passed around as a PDF. If neither is the case, leave them out.
+
 ### Components
 
 #### `<Sparkline>`
@@ -308,7 +359,7 @@ To work on the theme, run `npm install` and then `npm run dev`. This opens `exam
 ## Releasing
 
 1. Bump the version with `npm version patch` (or `minor` or `major`). This also creates a commit and a tag.
-2. Run `npm pack --dry-run` to check what goes into the package. It should only contain `components`, `layouts`, `setup`, `styles`, the README and the license.
+2. Run `npm pack --dry-run` to check what goes into the package. It should only contain `components`, `layouts`, `setup`, `styles`, `slide-bottom.vue`, the README and the license.
 3. Push with `git push --follow-tags`. npmjs.com loads the screenshots in this README from the GitHub repository, so they need to be there.
 4. Publish with `npm publish`. You need to run `npm login` once beforehand.
 
