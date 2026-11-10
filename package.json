@@ -1,6 +1,6 @@
 {
   "name": "slidev-theme-tufte",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Slidev theme after Edward Tufte: show the data, maximise data-ink, no chartjunk",
   "author": "Christoph Martel",
   "license": "MIT",
@@ -15,6 +15,12 @@
   "engines": {
     "slidev": ">=52.0.0"
   },
+  "files": [
+    "components",
+    "layouts",
+    "setup",
+    "styles"
+  ],
   "scripts": {
     "dev": "slidev example.md",
     "build": "slidev build example.md",
